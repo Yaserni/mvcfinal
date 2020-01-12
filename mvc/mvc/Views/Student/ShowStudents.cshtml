@@ -1,0 +1,46 @@
+﻿@model mvc.ModelView.StudentViewModel
+@using mvc.Models;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowStudent</title>
+</head>
+<body>
+    <div>
+        <br />
+        <table>
+            <tr>
+                <td>
+                    Firstname
+                </td>
+                <td>
+                    Lastname
+                </td>
+                <td>
+                    username
+                </td>
+
+            </tr>
+            @foreach (Student std in Model.students)
+            {
+                <tr>
+                    <td>
+                        @*@std.cid*@
+                    </td>
+                    <td>@std.username</td>
+                    <td>@std.lastname</td>
+                </tr>
+            }
+
+
+        </table>
+    </div>
+</body>
+</html>

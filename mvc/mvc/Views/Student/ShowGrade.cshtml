@@ -1,0 +1,33 @@
+﻿@model IEnumerable<mvc.Models.Grade>
+
+@{
+    ViewBag.Title = "ShowGrade";
+}
+
+<h2>ShowGrade</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            cid
+        </th>
+        <th>
+            grade
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.grade1)
+        </td>
+      
+    </tr>
+}
+
+</table>

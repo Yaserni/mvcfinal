@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mvcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="cid" />
+    </Key>
+    <Property Name="cid" Type="int" Nullable="false" />
+    <Property Name="coursename" Type="nvarchar" MaxLength="50" />
+    <Property Name="dexam1" Type="date" />
+    <Property Name="room1" Type="nvarchar" MaxLength="50" />
+    <Property Name="dexam2" Type="date" />
+    <Property Name="room2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Learn">
+    <Key>
+      <PropertyRef Name="Susername" />
+      <PropertyRef Name="shid" />
+    </Key>
+    <Property Name="Susername" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cid" Type="int" Nullable="false" />
+    <Property Name="Lusername" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="shid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lecturer">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="lid" Type="int" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstname" Type="nvarchar" MaxLength="50" />
+    <Property Name="lastname" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Shedule">
+    <Key>
+      <PropertyRef Name="shid" />
+      <PropertyRef Name="day" />
+      <PropertyRef Name="starthour" />
+      <PropertyRef Name="endhour" />
+      <PropertyRef Name="room" />
+    </Key>
+    <Property Name="shid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="day" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="starthour" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="endhour" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="room" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="sid" Type="int" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstname" Type="nvarchar" MaxLength="50" />
+    <Property Name="lastname" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="mvcModelStoreContainer">
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Learn" EntityType="Self.Learn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lecturer" EntityType="Self.Lecturer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shedule" EntityType="Self.Shedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

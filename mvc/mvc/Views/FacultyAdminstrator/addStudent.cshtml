@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>addStudent</title>
+</head>
+<body>
+    <div>
+        <form action="add" method="post">
+            <h1> Add Student to Course</h1>
+            <br />
+            <br />
+            <i>
+            student name :  <input id="Text1" type="text" name="username" required />
+
+            </i>
+            <br />
+            <br />
+            <i>
+
+            cid         :  <input id="Text1" type="number" name="cid" required />
+            </i>
+            <br />
+            <br />
+
+
+            <input id="Submit1" type="submit" value="add" />
+
+            <br />
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+
+
+
+        </form>
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

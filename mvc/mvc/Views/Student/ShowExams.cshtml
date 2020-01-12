@@ -1,0 +1,69 @@
+﻿@model IEnumerable<mvc.Models.Course>
+
+@{
+    ViewBag.Title = "ShowExams1";
+}
+
+<h2>ShowExams</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cid)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.coursename)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Lecturer)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.dexam1)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.room1)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.dexam2)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.room2)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.cid
+            </td>
+            <td>
+                @item.coursename
+            </td>
+            <td>
+                @item.Lecturer
+            </td>
+            <td>
+                @item.dexam1
+            </td>
+            <td>
+                @item.room1
+            </td>
+            <td>
+                @item.dexam2
+            </td>
+            <td>
+                @item.room2
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<mvc.Models.Student>
+
+@{
+    ViewBag.Title = "ShowStudents";
+}
+<center>
+    <h2><i>Students in the Course</i></h2>
+</center>
+
+<table class="table">
+    <tr>
+
+        <th>
+            Firstname
+        </th>
+        <th>
+            Lastname
+        </th>
+       
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.firstname</td>
+            <td>@item.lastname</td>
+
+
+
+        </tr>
+    }
+
+</table>

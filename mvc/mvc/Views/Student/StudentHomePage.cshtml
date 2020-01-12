@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        .button {
+            background-color:forestgreen; 
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>StudentHomePage</title>
+</head>
+<body>
+    <div>
+        <br /><br /><br />
+                    <h1>
+                        <i>
+                        <center>
+                                Wellcome Student Home Page
+                        </center>       
+                        </i> 
+                    </h1>
+        
+        <br /><br /><br /><br /><br /><br /><br />
+        <form action="showschedule" method="post">
+            <center>
+                <input id="ShowSchedule" type="submit" class="button button1" value="Schedule" />
+            </center>
+        </form>
+        <br />
+        <br />
+        <form action="ShowExams" method="post">
+            <center>
+                <input id="Button1" type="submit" value="Exams" class="button button1" />
+            </center>
+        </form>
+        <br />
+        <br />
+        <form action="ShowGrade" method="post">
+            <center>
+                <input id="Button1" type="submit" value="Grades" class="button button1" />
+            </center>
+        </form>
+        <br />
+        <br />
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<mvc.ModelView.ScheduleViewModel>
+
+@{
+    ViewBag.Title = "showschedule";
+}
+
+<h2>showschedule</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Course
+        </th>
+        <th>
+            Lecturer
+        </th>
+        <th>
+            Day
+        </th>
+        <th>
+            Start
+        </th>
+        <th>
+            End
+        </th>
+        <th>
+            room
+        </th>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+            <td>@item.course.coursename</td>
+            <td>@item.course.Lecturer</td>
+            <td>@item.schedule.day</td>
+            <td>@item.schedule.starthour </td>
+            <td>@item.schedule.endhour</td>
+            <td>@item.schedule.room</td>
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+    </table>

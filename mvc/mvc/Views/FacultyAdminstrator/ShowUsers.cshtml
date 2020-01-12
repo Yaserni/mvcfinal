@@ -1,0 +1,36 @@
+﻿@model IEnumerable<mvc.Models.User>
+
+@{
+    ViewBag.Title = "ShowUsers";
+}
+
+<h2>ShowUsers1</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            username
+        </th>
+        <th>password        </th>
+        <th>type   </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+
+
+        </tr>
+    }
+
+</table>

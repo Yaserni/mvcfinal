@@ -1,0 +1,50 @@
+﻿@model mvc.Models.Shedule
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>addschule</title>
+</head>
+<body>
+    <div>
+        <form action="addsc" method="post">
+
+
+            <i>
+            day :         <input id="Text1" type="text" name="day" />@Html.ValidationMessageFor(x => x.day)
+                </i>
+            <br />
+            <br />
+            <i>
+            start hour:   <input id="Text1" type="text" name="starthour" />@Html.ValidationMessageFor(x => x.starthour)
+            </i>
+
+            <br />
+            <br />
+            <i>
+            end hour  :   <input id="Text1" type="text" name="endhour" />@Html.ValidationMessageFor(x => x.endhour)
+            </i>
+
+            <br />
+            <br />
+            <i>
+
+            room  :   <input id="Text1" type="text" name="room" />@Html.ValidationMessageFor(x => x.room)
+            </i>
+            <br />
+            <br />
+
+            <input id="Submit1" type="submit" value="add" />
+            <br />
+
+
+
+
+    </div>
+</body>
+</html>

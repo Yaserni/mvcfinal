@@ -1,0 +1,109 @@
+﻿@model mvc.Models.Course
+    @{
+        Layout = null;
+    }
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>AddCourse</title>
+    </head>
+
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <body>
+        <div>
+            <h1><center><i>Add Course</i></center></h1>
+            <script src="~/Scripts/jquery.validate.js"></script>
+
+
+
+
+            @if (ViewBag.error1 != null)
+            {
+                <script type="text/javascript">
+                    window.onload = function () {
+
+                        alert(@ViewBag.error1);
+
+                    }
+                </script>
+            }
+
+
+            @if (ViewBag.error != null)
+            {
+                <script type="text/javascript">
+                    window.onload = function () {
+
+                        alert(@ViewBag.error);
+
+                    }
+                </script>
+            }
+
+            @using (Html.BeginForm("Submit", "FacultyAdminstrator", FormMethod.Post))
+            {
+                <i>Course Number:    </i> @Html.TextBoxFor(Model => Model.cid)@Html.ValidationMessageFor(model => model.cid) @ViewBag.error1
+                <br />
+                <br />
+                <i>Course Name:    </i> @Html.TextBoxFor(Model => Model.coursename) @Html.ValidationMessageFor(model => model.coursename)
+                <br />
+                <br />
+                <i>Lecturer: </i> @Html.TextBoxFor(Model => Model.Lecturer) @Html.ValidationMessageFor(model => model.Lecturer) @ViewBag.error
+                <br />
+                <br />
+                <i>date Moed1:</i> @Html.TextBoxFor(Model => Model.dexam1) @Html.ValidationMessageFor(model => model.dexam1)
+                <br />
+                <br />
+                <i>Room:</i> @Html.TextBoxFor(Model => Model.room1) @Html.ValidationMessageFor(model => model.room1)
+                <br />
+                <br />
+                <i>date Moed2: </i> @Html.TextBoxFor(Model => Model.dexam2)@Html.ValidationMessageFor(model => model.dexam2)
+                <br />
+                <br />
+                <i>Room: </i> @Html.TextBoxFor(Model => Model.room2) @Html.ValidationMessageFor(model => model.room2)
+                <br />
+                <br />
+
+                <input id="Submit1" type="submit" value="submit" />
+            }
+
+
+        </div>
+    </body>
+    </html>
+
+
+
+
+@*
+    <form action="Submit" method="post">
+    Course Number:<input id="cid" type="text" name="cid" />
+    <br />
+    <br />
+    Course Name:<input id="coursename" type="text" name="coursename" />
+    <br />
+    <br />
+    Lecturer:<input id="Lecturer" type="text" name="Lecturer" />
+    <br />
+    <br />
+    date Moed1:<input id="dexam1" type="datetime-local" name="dexam1" />
+    <br />
+    <br />
+    Moed1 Room:<input id="room1" type="text" name="room1" />
+    <br />
+    <br />
+    date Moed2:<input id="dexam2" type="datetime-local" name="dexam2" />
+    <br />
+    <br />
+    Moed2 Room:<input id="room2" type="text" name="room2" />
+    <br />
+    <br />
+    <input id="Submit1" type="submit" value="submit" />
+    </form>
+*@
